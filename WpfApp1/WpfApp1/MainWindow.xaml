@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+             <!-- <ListBox Margin="250 10 10 10" ItemsSource="{Binding Items}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Background="#ccc">
+                        <TextBlock Text="{Binding Path=Width}" Width="100"/>
+                        <TextBlock Text="{Binding Path=Height}" Width="100"/>
+                         <TextBlock Text="{Binding Path=BitDepth}" Width="100"/>
+                         <TextBlock Text="{Binding Path=Type}" Width="100"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>-->
+      <Canvas x:Name ="Wrapper" Margin="250 10 10 10">
+        
+      </Canvas>
+      
         <Button x:Name="ButtonToImage" Content="Wybierz zdjecie" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="114" Click="ButtonToImage_Click"/>
         <Image x:Name="Image" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="114"/>
 
