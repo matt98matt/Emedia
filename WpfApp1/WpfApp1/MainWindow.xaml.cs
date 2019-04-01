@@ -15,6 +15,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Microsoft.Win32;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.IO;
+using System.Net.Http;
+using System.Xml;
+
 namespace WpfApp1
 {
     /// <summary>
@@ -22,9 +38,19 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+                ObservableCollection<JPGInformation> jpg = new ObservableCollection<JPGInformation>
+        {
+        };
+
+        public ObservableCollection<JPGInformation> Items
+        {
+            get => jpg;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         public string ImageSource;
@@ -49,11 +75,11 @@ namespace WpfApp1
                 filePath = openFileDialog.FileName;
                 ImageSource = filePath;
                 Image.Source = new BitmapImage(new Uri(filePath));
-                ToArray();
+                ShowJPGInformations();
             }
         }
 
-        private void ToArray()
+        private void ShowJPGInformations()
         {
             byte[] image = System.IO.File.ReadAllBytes(ImageSource);
             
@@ -83,7 +109,7 @@ namespace WpfApp1
                 numberOfComponents = "monochromatyczny";
                 break;
                 case 0x03:
-                numberOfComponents = "color YcbCr or YIQ";
+                numberOfComponents = "Color YcbCr or YIQ";
                 break;
                 case 0x04:
                 numberOfComponents = "CMYK";
@@ -91,30 +117,19 @@ namespace WpfApp1
                 deafault:
                 break;
        }
-            TextBox jpgWidth = new TextBox();
-            jpgWidth.Text = "Width: " + width + "px";
-            jpgWidth.Margin = new System.Windows.Thickness(300, 0, 0, 0);
-            Wrapper.Children.Add(jpgWidth);
 
-            TextBox jpgHeight = new TextBox();
-            jpgHeight.Text = "Height: " + height + "px";
-            jpgHeight.Margin = new System.Windows.Thickness(300, 50, 0, 0);
-            Wrapper.Children.Add(jpgHeight);
-
-            TextBox jpgDepth = new TextBox();
-            jpgDepth.Text = "Bit depth: " + bitDepth;
-            jpgDepth.Margin = new System.Windows.Thickness(300, 100, 0, 0);
-            Wrapper.Children.Add(jpgDepth); 
-
-            TextBox jpgType = new TextBox();
-            jpgType.Text = "Type: " + numberOfComponents;
-            jpgType.Margin = new System.Windows.Thickness(300, 150, 0, 0);
-            Wrapper.Children.Add(jpgType);
-            
-            //Width = width;
-            //Height = height;
-            //BitDepth = bitDepth;
-            //Type = numberOfComponents;
+            jpg.Add(new JPGInformation{Text = ("Szerokość: " + width + "px")});  
+            jpg.Add(new JPGInformation{Text = ("Wysokość: " + height + "px")});  
+            jpg.Add(new JPGInformation{Text = ("Głębia bitu: " + bitDepth)});  
+            jpg.Add(new JPGInformation{Text = ("Typ: " + numberOfComponents)});  
+         
+            for(int i = 0; i<image2[7]; i++)
+{
+            jpg.Add(new JPGInformation{Text = ("ID componentu: " + image2[8 + i*3])});  
+            jpg.Add(new JPGInformation{Text = ("Współczynnik próbkowania pionowy:" + (image2[9 + i*3]&0x0F))}); 
+            jpg.Add(new JPGInformation{Text = ("Współczynnik próbkowania poziomy:" + (image2[9 + i*3]&0xF0>>4))});  
+            jpg.Add(new JPGInformation{Text = ("Numer tabeli kwantyzacji: " + image2[10 + i*3])}); 
+}
 
             WriteToFile(image);
         }
