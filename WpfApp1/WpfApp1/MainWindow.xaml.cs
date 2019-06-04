@@ -48,6 +48,7 @@ namespace WpfApp1
         public static BigInteger E2;
         public static BigInteger D2;
         public static int lenght2;
+        public static BigInteger[] data;
 
         public static  string ImageSource;
         ObservableCollection<JPGInformation> jpg = new ObservableCollection<JPGInformation>
@@ -189,23 +190,67 @@ namespace WpfApp1
             System.IO.File.WriteAllBytes(path, key3);
         }
         private void ButtonToBigERSA_Click(object sender, RoutedEventArgs e) {
-  /*BigInteger p = x.getBigPrimeNumber(3);
+  
+            string path = @"key.txt";
+            XOR xor = new XOR();
+            byte[] key = xor.ReadKey();
+            BigPrimeGenerator x = new BigPrimeGenerator();
+            BigRSA rsa = new BigRSA();
+            BigInteger p = x.getBigPrimeNumber(3);
             BigInteger q = x.getBigPrimeNumber(3);
             while(q == p) q = q = x.getBigPrimeNumber(3);
             BigInteger n = rsa.getN(p, q);
+            N2 = n;
             BigInteger phi = rsa.getPhi(p,q);
             BigInteger E = rsa.getE(phi, n);
+            E2 = E;
             BigInteger D = rsa.getD(E, phi);
+            D2 = D;
             BigInteger[] key2 = new BigInteger[key.Length];
             for(int i = 0; i<key.Length; i++)
             {
                 key2[i] = new BigInteger(key[i]);
             }
             rsa.RSAEncryption(key2, E, n);
+            lenght2 = key2.Length;
+            string key3 = " ";
+            for(int i = 0; i<key2.Length; i++)
+            {
+                key3 += " " + (key2[i]).ToString();
+            }
+            data = new BigInteger[key2.Length];
+            for (int i = 0; i < key2.Length; i++)
+            {
+                data[i] = (key2[i]);
+            }
+            if (!File.Exists(path))
+            {
+                File.CreateText(path);
+            }
+            File.WriteAllText(path, key3);
+            /*
             rsa.RSADescryption(key2, D, n);
             xor.ExclusiveOR(data, key); */
 }
-        private void ButtonToBigDRSA_Click(object sender, RoutedEventArgs e) { }
+        private void ButtonToBigDRSA_Click(object sender, RoutedEventArgs e) 
+{
+            string path = @"key.txt";
+            BigInteger[] key2 = new BigInteger[data.Length];
+            for(int i = 0; i<data.Length; i++)
+            {
+                key2[i] = (data[i]);
+            }
+            BigRSA x = new BigRSA();
+            x.RSADescryption(key2, D2, N2);
+            string[] key3 = new string[key2.Length];
+            byte[] key4 = new byte[key2.Length];
+            for(int i = 0; i<key2.Length; i++)
+            {
+                key3[i] = key2[i].ToString();
+                key4[i] = Convert.ToByte(key3[i]);
+            }
+            System.IO.File.WriteAllBytes(path, key4);
+}
 
 
         private void ShowJPGInformations()

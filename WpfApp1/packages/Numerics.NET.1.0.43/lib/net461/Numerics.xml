@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Numerics</name>
+    </assembly>
+    <members>
+        <member name="T:Numerics.Extensions">
+            <summary>
+            Extension methods.
+            </summary>
+        </member>
+        <member name="M:Numerics.Extensions.AsEnumerable(System.Int64)">
+            <summary>
+            Returns a zero-based enumeration up to, but excluding, the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>IEnumerable&lt;System.Int64&gt;.</returns>
+        </member>
+        <member name="M:Numerics.Extensions.AsEnumerable(System.Int32)">
+            <summary>
+            Returns a zero-based enumeration up to, but excluding, the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>IEnumerable&lt;System.Int32&gt;.</returns>
+        </member>
+        <member name="T:Numerics.Range">
+            <summary>
+            A range of 64-bit integers.
+            </summary>
+        </member>
+        <member name="M:Numerics.Range.#ctor(System.Int64,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Numerics.Range"/> struct.
+            </summary>
+            <param name="length">The length.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Numerics.Range.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Numerics.Range"/> struct.
+            </summary>
+            <param name="length">The length.</param>
+        </member>
+        <member name="P:Numerics.Range.Start">
+            <summary>
+            Gets the start.
+            </summary>
+            <value>The start.</value>
+        </member>
+        <member name="P:Numerics.Range.End">
+            <summary>
+            Gets the end.
+            </summary>
+            <value>The end.</value>
+        </member>
+        <member name="P:Numerics.Range.Length">
+            <summary>
+            Gets the length.
+            </summary>
+            <value>The length.</value>
+        </member>
+        <member name="M:Numerics.Range.Split(System.Int64)">
+            <summary>
+            Splits the range.
+            </summary>
+            <param name="count">The count of ranges to split into.</param>
+            <returns>IEnumerable&lt;Range&gt;.</returns>
+        </member>
+        <member name="M:Numerics.Range.AsEnumerable">
+            <summary>
+            Enumerates between the start and end of the range.
+            </summary>
+            <returns>IEnumerable&lt;System.Int64&gt;.</returns>
+        </member>
+        <member name="M:Numerics.Range.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+    </members>
+</doc>

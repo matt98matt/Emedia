@@ -37,3 +37,9 @@ C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.Co
 C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\BigInteger.dll
 C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\MathNet.Numerics.dll
 C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\MathNet.Numerics.xml
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\Academy.Numerics.dll
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\Numerics.dll
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\Academy.Numerics.pdb
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\Academy.Numerics.xml
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\Numerics.pdb
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\Numerics.xml
