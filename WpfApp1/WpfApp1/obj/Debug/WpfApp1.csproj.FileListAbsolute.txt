@@ -28,3 +28,12 @@ C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.Ge
 C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\MaterialDesignColors.dll
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\obj\Debug\App.baml
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\BigInteger.dll
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\MathNet.Numerics.dll
+C:\Users\Mateusz\Desktop\pwr6\Emedia\WpfApp1\WpfApp1\bin\Debug\MathNet.Numerics.xml

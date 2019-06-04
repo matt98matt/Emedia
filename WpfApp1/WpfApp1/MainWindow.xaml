@@ -1,25 +1,41 @@
 ﻿<Window x:Class="WpfApp1.MainWindow"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="750" Width="800">
     <Grid>
-             <ListBox Margin="350 10 10 10" ItemsSource="{Binding Items}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="233*"/>
+            <ColumnDefinition Width="559*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Margin="163,10,10,10" ItemsSource="{Binding Items}" Grid.Column="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Background="#ccc">
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Path=Text}" Width="400"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-   
-      
-        <Button x:Name="ButtonToImage" Content="Wybierz zdjecie" HorizontalAlignment="Left" Margin="100,115,0,0" VerticalAlignment="Top" Width="114" Click="ButtonToImage_Click"/>
-        <Image x:Name="Image" HorizontalAlignment="Left" Height="100" Margin="100,10,0,0" VerticalAlignment="Top" Width="114"/>
 
+
+        <Button x:Name="ButtonToImage" Content="Wybierz zdjecie" HorizontalAlignment="Left" Margin="50,120,0,0" VerticalAlignment="Top" Click="ButtonToImage_Click" Width="132"/>
+        <Image x:Name="Image" HorizontalAlignment="Left" Height="100" Margin="100,10,0,0" VerticalAlignment="Top" Width="114"/>
+        <Button x:Name="ButtonToNoisyImage" Content="Wybierz zdjecie" HorizontalAlignment="Left" Margin="50,320,0,0" VerticalAlignment="Top" Click="ButtonToNoisyImage_Click" Width="132"/>
+        <Image x:Name="NoisyImage" HorizontalAlignment="Left" Height="100" Margin="100,210,0,0" VerticalAlignment="Top" Width="114"/>
+        <Button x:Name="ButtonToXOR" Content="XOR" HorizontalAlignment="Left" Margin="20,420,0,0" VerticalAlignment="Top" Click="ButtonToXOR_Click" Width="60"/>
+        <Button x:Name="ButtonToNotXOR" Content="-XOR" HorizontalAlignment="Left" Margin="117,420,0,0" VerticalAlignment="Top" Click="ButtonToNotXOR_Click" Width="65"/>
+        <Button x:Name="ButtonToSmallERSA" Content="Szyfrowanie małe RSA" HorizontalAlignment="Left" Margin="20,470,0,0" VerticalAlignment="Top" Click="ButtonToSmallERSA_Click" Width="173"/>
+        <Button x:Name="ButtonToSmallDRSA" Content="Deszyfrowanie małe RSA" HorizontalAlignment="Left" Margin="20,520,0,0" VerticalAlignment="Top" Click="ButtonToSmallDRSA_Click" Width="186"/>
+        <Button x:Name="ButtonToBigERSA" Content="Szyfrowanie duże RSA" HorizontalAlignment="Left" Margin="20,570,0,0" VerticalAlignment="Top" Click="ButtonToBigERSA_Click" Width="173"/>
+        <Button x:Name="ButtonToBigDRSA" Content="Deszyfrowanie duże RSA" HorizontalAlignment="Left" Margin="20,620,0,0" VerticalAlignment="Top" Click="ButtonToBigDRSA_Click" Width="186"/>
     </Grid>
 </Window>
